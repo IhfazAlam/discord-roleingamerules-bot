@@ -73,6 +73,25 @@ class RulesDropdown(Select):
         else:
             await interaction.response.send_message(f"You selected: {self.values[0]}", ephemeral=True)
 
+        elif self.values[0] == "🔥 Firefighter Roleplay Guidelines":
+        full_text = (
+            "🔥 **Firefighter Roleplay Guidelines**\n\n"
+            "- Respond promptly to fire and rescue calls, always prioritizing safety.\n"
+            "- Provide detailed scene descriptions to enhance realism.\n"
+            "- Follow all safety protocols during rescue operations.\n"
+            "- Communicate clearly with team members and dispatch.\n"
+            "- Handle fires and accidents professionally, showing respect for civilians and property.\n"
+            "- Accurately document incidents for reports.\n"
+            "- Perform realistic actions when extinguishing fires or rescuing victims.\n"
+            "- Conduct regular equipment and vehicle checks.\n"
+            "- Avoid reckless behavior during emergency responses.\n"
+            "- Roleplay injuries and hazards with careful attention to detail."
+        )
+        await interaction.response.send_message(full_text, ephemeral=True)
+    
+    else:
+        await interaction.response.send_message(f"You selected: {self.values[0]}", ephemeral=True)
+
 # -------------------------
 # View Class
 # -------------------------
