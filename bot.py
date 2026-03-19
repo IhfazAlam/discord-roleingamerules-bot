@@ -39,34 +39,34 @@ class RulesDropdown(Select):
         if self.values[0] == "🚓 Police Roleplay Guidelines":
             full_text = (
                 "🚓 **Police Roleplay Guidelines**\n\n"
-                "1️⃣ Greeting Civilians\n"
-                'Start politely: "Good day, sir/ma\'am. May I see your license and registration?"\n\n'
-                "2️⃣ Roleplay Actions\n"
+                "1️⃣ Greeting Civilians\n\n"
+                '- Start politely: "Good day, sir/ma\'am. May I see your license and registration?"\n\n'
+                "2️⃣ Roleplay Actions\n\n"
                 "Use descriptive actions for immersion:\n\n"
                 "- -takes- = taking documents/items\n"
                 "- -checking- = inspecting documents/vehicle\n"
                 "- -gives back- = returning documents/items\n"
                 "- -questions- = questioning civilians\n"
                 "- -searching- = searching vehicle/person if needed\n\n"
-                "3️⃣ Document Checks\n"
-                '"Please hand over your license and registration."\n'
-                "-takes- the documents\n"
-                "-checking- validity\n"
-                "-gives back- once done\n\n"
-                "4️⃣ Response & Feedback\n"
+                "3️⃣ Document Checks\n\n"
+                '- "Please hand over your license and registration."\n'
+                "- -takes- the documents\n"
+                "- -checking- validity\n"
+                "- -gives back- once done\n\n"
+                "4️⃣ Response & Feedback\n\n"
                 "- ✅ Clear: \"You're all set, sir/ma'am. You may proceed.\"\n"
                 "- ⚠️ Issues: \"There are some problems with your documents. Please wait while I verify further.\"\n\n"
-                "5️⃣ Handling Suspicious Behavior\n"
+                "5️⃣ Handling Suspicious Behavior\n\n"
                 '- "Where are you headed?"\n'
                 "- -questions- the civilian as needed\n\n"
-                "6️⃣ Efficiency & Realism\n"
+                "6️⃣ Efficiency & Realism\n\n"
                 "- Keep checks short (1–2 exchanges ideally)\n"
                 "- Use realistic procedures & detailed RP\n\n"
-                "7️⃣ Respect & Professionalism\n"
+                "7️⃣ Respect & Professionalism\n\n"
                 "- Always treat civilians respectfully, no exceptions\n\n"
-                "8️⃣ Time Management\n"
+                "8️⃣ Time Management\n\n"
                 "- Complete checks in a few minutes to avoid delays\n\n"
-                "9️⃣ Reporting & Conduct\n"
+                "9️⃣ Reporting & Conduct\n\n"
                 "- Report misconduct and follow all protocols to maintain high standards"
             )
             await interaction.response.send_message(full_text, ephemeral=True)
