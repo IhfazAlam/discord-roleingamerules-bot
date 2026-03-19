@@ -17,7 +17,7 @@ class RulesDropdown(Select):
         options = [
             discord.SelectOption(
                 label="Police Roleplay Guidelines",
-                description="Rules for Police Roleplay"
+                
             ),
             discord.SelectOption(label="Option 2", description="Description 2"),
             discord.SelectOption(label="Option 3", description="Description 3"),
