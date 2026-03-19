@@ -19,7 +19,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 class RulesDropdown(Select):
     def __init__(self):
         options = [
-            discord.SelectOption(label="🚓 Police Roleplay Guidelines"),
+            discord.SelectOption(label="Police Roleplay Guidelines", emoji="🚓"),
             discord.SelectOption(label="Option 2"),
             discord.SelectOption(label="Option 3"),
             discord.SelectOption(label="Option 4"),
