@@ -36,7 +36,7 @@ class RulesDropdown(Select):
         )
 
     async def callback(self, interaction: discord.Interaction):
-        if self.values[0] == "🚓 Police Roleplay Guidelines":
+        if self.values[0] == "Police Roleplay Guidelines":
             full_text = (
                 "🚓 **Police Roleplay Guidelines**\n\n"
                 "1️⃣ Greeting Civilians\n\n"
