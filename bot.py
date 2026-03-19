@@ -6,9 +6,6 @@ import os
 # Token from Railway Environment Variables
 TOKEN = os.environ["DISCORD_TOKEN"]
 
-intents = discord.Intents.default()
-intents.message_content = True
-
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Dropdown Class
@@ -16,16 +13,16 @@ class RulesDropdown(Select):
     def __init__(self):
         options = [
             discord.SelectOption(
-                label="Police Roleplay Guidelines",
-                
+                label="🚓 Police Roleplay Guidelines"
+                # description removed
             ),
-            discord.SelectOption(label="Option 2", description="Description 2"),
-            discord.SelectOption(label="Option 3", description="Description 3"),
-            discord.SelectOption(label="Option 4", description="Description 4"),
-            discord.SelectOption(label="Option 5", description="Description 5"),
-            discord.SelectOption(label="Option 6", description="Description 6"),
-            discord.SelectOption(label="Option 7", description="Description 7"),
-            discord.SelectOption(label="Option 8", description="Description 8"),
+            discord.SelectOption(label="Option 2"),
+            discord.SelectOption(label="Option 3"),
+            discord.SelectOption(label="Option 4"),
+            discord.SelectOption(label="Option 5"),
+            discord.SelectOption(label="Option 6"),
+            discord.SelectOption(label="Option 7"),
+            discord.SelectOption(label="Option 8"),
         ]
         super().__init__(
             placeholder="Press Here For In-Game Guidelines",
@@ -35,37 +32,41 @@ class RulesDropdown(Select):
         )
 
     async def callback(self, interaction: discord.Interaction):
-        if self.values[0] == "Police Roleplay Guidelines":
+        if self.values[0] == "🚓 Police Roleplay Guidelines":
             full_text = (
-                "**Police Roleplay Guidelines**\n\n"
-                "1. Greeting Civilians\n"
-                '   Begin interactions politely: "Good day, sir/ma\'am. May I see your license and registration?"\n\n'
-                "2. Roleplay Interaction Protocol\n"
-                "   -takes- → taking documents/items\n"
-                "   -checking- → inspecting documents/vehicle\n"
-                "   -gives back- → returning documents/items\n"
-                "   -questions- → questioning civilians\n"
-                "   -searching- → searching vehicle/person, if needed\n\n"
-                "3. Document Checks\n"
-                '   "Please hand over your license and registration."\n'
-                "   -takes- the documents\n"
-                "   -checking- their validity\n"
-                "   -gives back- after inspection\n\n"
-                "4. Response & Feedback\n"
-                '   Clear: "You\'re all set, sir/ma\'am. You may proceed."\n'
-                '   Issues: "There are some problems with your documents. Please wait while I verify further."\n\n'
-                "5. Handling Suspicious Behavior\n"
-                '   "Where are you headed?"\n'
-                "   -questions- the civilian as needed\n\n"
-                "6. Efficiency & Realism\n"
-                "   Keep checks brief, ideally 1–2 exchanges per interaction\n"
-                "   Follow realistic procedures with detailed descriptions\n\n"
-                "7. Respect & Professionalism\n"
-                "   Treat all civilians respectfully, regardless of behavior\n\n"
-                "8. Time Management\n"
-                "   Complete each check within a few minutes to prevent delays\n\n"
-                "9. Reporting & Conduct\n"
-                "   Report any misconduct and follow all protocols to maintain high standards"
+                "🚓 **Police Roleplay Guidelines**\n\n"
+                "1️⃣ Greeting Civilians\n"
+                "Start politely:\n"
+                '- "Good day, sir/ma\'am. May I see your license and registration?"\n\n'
+                "2️⃣ Roleplay Actions\n"
+                "Use descriptive actions for immersion:\n\n"
+                "- -takes- = taking documents/items\n"
+                "- -checking- = inspecting documents/vehicle\n"
+                "- -gives back- = returning documents/items\n"
+                "- -questions- = questioning civilians\n"
+                "- -searching- = searching vehicle/person if needed\n\n"
+                "3️⃣ Document Checks\n"
+                'Request & inspect:\n'
+                '"Please hand over your license and registration."\n'
+                "-takes- the documents\n"
+                "-checking- validity\n"
+                "-gives back- once done\n\n"
+                "4️⃣ Response & Feedback\n\n"
+                "- ✅ Clear: \"You're all set, sir/ma'am. You may proceed.\"\n"
+                "- ⚠️ Issues: \"There are some problems with your documents. Please wait while I verify further.\"\n\n"
+                "5️⃣ Handling Suspicious Behavior\n"
+                "Ask questions to gather info:\n"
+                '- "Where are you headed?"\n'
+                "- -questions- the civilian as needed\n\n"
+                "6️⃣ Efficiency & Realism\n"
+                "- Keep checks short (1–2 exchanges ideally)\n"
+                "- Use realistic procedures & detailed RP\n\n"
+                "7️⃣ Respect & Professionalism\n"
+                "- Always treat civilians respectfully, no exceptions\n\n"
+                "8️⃣ Time Management\n"
+                "- Complete checks in a few minutes to avoid delays\n\n"
+                "9️⃣ Reporting & Conduct\n"
+                "- Report misconduct and follow all protocols to maintain high standards"
             )
             await interaction.response.send_message(full_text, ephemeral=True)
         else:
