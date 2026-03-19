@@ -102,6 +102,8 @@ async def ehroleingames(ctx):
         ),
         color=discord.Color.blue()
     )
+    embed.set_image(url="https://i.postimg.cc/3NQ5LBVL/Roleplay-guideline.png")  # <-- your image URL
+
     await ctx.send(embed=embed, view=RulesView())
 
 # -------------------------
