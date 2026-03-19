@@ -3,19 +3,23 @@ from discord.ext import commands
 from discord.ui import Select, View
 import os
 
-# Token from Railway Environment Variables
+# --- Token from Environment Variables ---
 TOKEN = os.environ["DISCORD_TOKEN"]
 
+# --- DEFINE INTENTS BEFORE CREATING BOT ---
+intents = discord.Intents.default()
+intents.message_content = True  # needed for message commands
+
+# --- CREATE BOT ---
 bot = commands.Bot(command_prefix="!", intents=intents)
 
+# -------------------------
 # Dropdown Class
+# -------------------------
 class RulesDropdown(Select):
     def __init__(self):
         options = [
-            discord.SelectOption(
-                label="🚓 Police Roleplay Guidelines"
-                # description removed
-            ),
+            discord.SelectOption(label="🚓 Police Roleplay Guidelines"),
             discord.SelectOption(label="Option 2"),
             discord.SelectOption(label="Option 3"),
             discord.SelectOption(label="Option 4"),
@@ -36,8 +40,7 @@ class RulesDropdown(Select):
             full_text = (
                 "🚓 **Police Roleplay Guidelines**\n\n"
                 "1️⃣ Greeting Civilians\n"
-                "Start politely:\n"
-                '- "Good day, sir/ma\'am. May I see your license and registration?"\n\n'
+                'Start politely: "Good day, sir/ma\'am. May I see your license and registration?"\n\n'
                 "2️⃣ Roleplay Actions\n"
                 "Use descriptive actions for immersion:\n\n"
                 "- -takes- = taking documents/items\n"
@@ -46,16 +49,14 @@ class RulesDropdown(Select):
                 "- -questions- = questioning civilians\n"
                 "- -searching- = searching vehicle/person if needed\n\n"
                 "3️⃣ Document Checks\n"
-                'Request & inspect:\n'
                 '"Please hand over your license and registration."\n'
                 "-takes- the documents\n"
                 "-checking- validity\n"
                 "-gives back- once done\n\n"
-                "4️⃣ Response & Feedback\n\n"
+                "4️⃣ Response & Feedback\n"
                 "- ✅ Clear: \"You're all set, sir/ma'am. You may proceed.\"\n"
                 "- ⚠️ Issues: \"There are some problems with your documents. Please wait while I verify further.\"\n\n"
                 "5️⃣ Handling Suspicious Behavior\n"
-                "Ask questions to gather info:\n"
                 '- "Where are you headed?"\n'
                 "- -questions- the civilian as needed\n\n"
                 "6️⃣ Efficiency & Realism\n"
@@ -72,13 +73,17 @@ class RulesDropdown(Select):
         else:
             await interaction.response.send_message(f"You selected: {self.values[0]}", ephemeral=True)
 
+# -------------------------
 # View Class
+# -------------------------
 class RulesView(View):
     def __init__(self):
         super().__init__()
         self.add_item(RulesDropdown())
 
+# -------------------------
 # Command
+# -------------------------
 @bot.command()
 async def ehroleingames(ctx):
     embed = discord.Embed(
@@ -99,5 +104,7 @@ async def ehroleingames(ctx):
     )
     await ctx.send(embed=embed, view=RulesView())
 
-# Run Bot
+# -------------------------
+# RUN BOT
+# -------------------------
 bot.run(TOKEN)
