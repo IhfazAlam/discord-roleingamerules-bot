@@ -193,7 +193,7 @@ async def ehroleingames(ctx):
         title="📖 Departments, Civilians & Criminals – In-Game Guidelines",
         description=(
             "Welcome to SRP | SERIOUS RP! Below you will find role-specific rules for all Departments, Civilians, and Criminals. "
-            "These rules are essential to make roleplay smooth and fair alongside the general <#1483570852787257356>. "
+            "These rules are essential to make roleplay smooth and fair alongside the general <#1483104098797621279>. "
             "Reading and understanding them is required to fully participate in RP scenes.\n\n"
             "⚠️ Important Notice\n"
             "By playing on SRP | SERIOUS RP, you automatically agree to follow all server rules.\n\n"
